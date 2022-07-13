@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../ex004/favicon.ico" type="image/x-icon">
+    <title>Midias em HTML5</title>
+</head>
+<body>
+    <h1>Imagem dinâmica</h1>
+    <p>Tente abrir esse site em vários dispositivos diferentes ou simplesmente aumente e diminua o tamanho do seu navegador</p>
+    <picture> <!-- o source funciona como um if, se a primeira condição não for aceita a segunda entra e assim em diante -->
+        <source media="(max-width: 750px)" srcset="img/foto-p.png" type="image/png">
+        <source media="(max-width: 1000px)" srcset="img/foto-m.png" type="image/png">
+        <img src="img/foto-g.png" alt="Imagem flexível">
+    </picture>
+    <h1>Reproduzindo Áudio</h1>
+    <p>Vamos aprender a reproduzir áudio no HTML5.</p>
+    <!-- <audio src="midia/ui.mp3" controls autoplay></audio> TIPOS DE ARQUIVO MPEG WAV OGG -->
+    <audio preload="metadata" autoplay controls loop> <!-- Preload é para carregar antes do site (evitar preload em auto, pois o site fica mais pesado), autoplay vai reproduzir automaticamente, controls, mostra o play e pause, loop vai ficar tocando o audio eternamente -->
+        <source src="midia/ui.mp3" type="audio/mpeg">
+        <source src="midia/ui.ogg" type="audio/ogg">
+        <source src="midia/ui.wav" type="audio/wav"> <!-- Evitar arquivo wav, pois wav são arquivos muito grande -->
+        <p>Infelizmente seu navegador não consegue reproduzir áudio. <a href="midia/ui.mp3">Clique aqui para baixar o arquivo MP3</a></p>        
+    </audio>
+    </body>
+</html>
